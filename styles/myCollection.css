@@ -1,0 +1,15 @@
+.myCollection_con{
+    position: relative;
+}
+.myCollection_img{
+    -webkit-filter:brightness(0.6);
+}
+.myCollection_dis{
+    position: absolute;
+    z-index: 100;
+    color: #ffffff;
+    left: 50%;
+    top: 50%;
+    margin-left: -7.2em;
+    margin-top: -2em;
+}

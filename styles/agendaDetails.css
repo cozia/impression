@@ -1,0 +1,71 @@
+#agendaDetails_bg{
+    background: url("../img/huanghelou.jpg") no-repeat;
+    background-size: contain;
+    /*position: relative;*/
+}
+/*#xxx{*/
+    /*width: 100%;*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
+/*}*/
+.agendaDetails_header_box{
+    height: 150px;
+}
+.agendaDetails_header_bottom{
+    background: #000;
+    opacity: 0.6;
+}
+.agendaDetails_correlation,.agendaDetails_copy{
+    display: inline-block;
+    text-align: center;
+    height: 1.4em;
+    line-height: 1.4em;
+    width: 6em;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+}
+.agendaDetails_green{
+    display: inline-block;
+    height: 2em;
+    line-height: 2em;
+    background: forestgreen;
+    width: 20%;
+    text-align: center;
+}
+.agendaDetails_gray{
+    color: #ffffff;
+    display: inline-block;
+    height: 2em;
+    line-height: 2em;
+    background: lightgray;
+    width: 80%;
+    text-indent: 2em;
+}
+.agendaDetails_fix{
+    width: 20%;
+}
+/*#prepareDone{*/
+    /*color: #3276b1;*/
+    /*width: 20px;*/
+    /*height: 20px;*/
+    /*display: inline-block;*/
+    /*background: #808080;*/
+/*}*/
+/*#prepareEdit{*/
+    /*color: mediumvioletred;*/
+    /*display: inline-block;*/
+    /*background: #808080;*/
+/*}*/
+#bottom{
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    bottom: 0;
+    height: 4em;
+    line-height: 4em;
+    text-align: center;
+    color: mediumvioletred;
+    background: #ffffff;
+    border-top: 1px solid lightgray;
+}

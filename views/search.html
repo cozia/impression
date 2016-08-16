@@ -1,0 +1,19 @@
+<md-content  ng-cloak>
+    <div id="searchBar" layout="row">
+        <span class="fa fa-search searchIcon"></span>
+        <input class="md-margin"  type="text" ng-model="searchItem" placeholder="搜索相关行程/景点/时间"/>
+        <span class=" md-margin fa fa-close closeIcon" ng-click="deleteAll()"></span>
+    </div>
+    <md-list flex>
+        <md-list-item ng-click="null" ng-repeat="searchHistry in searchList">
+            <span class="fa fa-clock-o md-margin"></span>
+            <span ng-bind="searchHistry"></span>
+            <md-divider></md-divider>
+        </md-list-item>
+        <md-list-item ng-click="clearAll()">
+            <span class="fa fa-close md-margin"></span>
+            <span>清空搜索记录</span>
+            <md-divider></md-divider>
+        </md-list-item>
+    </md-list>
+</md-content>

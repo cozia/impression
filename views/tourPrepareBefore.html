@@ -1,0 +1,15 @@
+<div>
+    <fieldset class="standard">
+        <legend>出行前准备事项</legend>
+        <div layout="column">
+            <div flex-xs flex="50" ng-repeat="prepare in prepareList" >
+                <md-checkbox>{{prepare}}</md-checkbox>
+            </div>
+
+        </div>
+        <div layout="row" layout-align="space-around">
+            <span id="prepareDone" ng-click="hide()" class="fa fa-check md-margin"></span>
+            <span id="prepareEdit" class="fa fa-pencil md-margin"></span>
+        </div>
+    </fieldset>
+</div>

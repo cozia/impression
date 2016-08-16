@@ -1,0 +1,25 @@
+<md-content ng-cloak>
+    <div class="presonalCenter_head" layout="column" layout-align="center center">
+        <img id="presonalCenter_headPhoto" src="img/face.JPG" alt=""/>
+    </div>
+    <md-list flex>
+        <md-list-item  ng-click="null">
+            <span>我的钱包</span>
+            <md-divider></md-divider>
+        </md-list-item>
+        <md-list-item  ng-click="null">
+            <span>我的收藏</span>
+            <md-divider></md-divider>
+        </md-list-item>
+    </md-list>
+
+    <md-list flex>
+        <md-list-item  ng-click="null" ng-repeat="x in presonalCenterList">
+            <div layout="row" layout-align="space-between" style="width: 280px">
+                <span>{{x}}</span>
+                <span>&gt;</span>
+            </div>
+            <md-divider></md-divider>
+        </md-list-item>
+    </md-list>
+</md-content>

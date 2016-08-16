@@ -1,0 +1,121 @@
+<md-content id="agendaDetails_bg" ng-cloak>
+    <div layout="column"   style="color: #ffffff">
+        <div layout="row" layout-align="space-between" class="md-margin">
+            <a ui-sref="index">
+                <span class="fa fa-arrow-left"></span>
+            </a>
+            <div>
+                <span class="fa fa-file-o md-margin">
+                    <span class="agendaDetails_correlation">相关行程</span>
+                </span>
+                <span class="fa fa-copy md-margin">
+                    <span class="agendaDetails_copy">复制行程</span>
+                </span>
+            </div>
+        </div>
+        <div layout="column" layout-align="center center" class="agendaDetails_header_box">
+            <h4>去武汉吧！实惠又舒心</h4>
+            <span>--武汉·黄鹤楼--</span>
+        </div>
+        <div layout="column">
+            <div layout="row" layout-align="space-around" class="md-padding agendaDetails_header_bottom">
+                <div layout="column">
+                    <span>出发时间：2016.8.8</span>
+                    <span>紧凑程度：休闲</span>
+                </div>
+                <div layout="column">
+                    <span>人均花费：￥2000/人</span>
+                    <span>和谁一起：带父母</span>
+                </div>
+            </div>
+            <!--<div ng-repeat="x in impression" layout="row" layout-align="space-between">-->
+                <!--<div>·{{x}}</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+    <md-content>
+        <span>{{note}}</span>
+    </md-content>
+    <md-content>
+        <div>
+            <div layout="row">
+                <span class="agendaDetails_green">-</span>
+                <span class="agendaDetails_gray">出游准备</span>
+            </div>
+            <md-list>
+                <md-list-item>
+                    <div class="agendaDetails_fix">
+                        <md-button ng-click="showPrepare($event)" class="fa fa-sort-numeric-asc md-fab md-mini md-accent md-raised"></md-button>
+                    </div>
+                    <div class="">
+                        <span>行李清单&出行前确认事项</span>
+                    </div>
+                </md-list-item>
+            </md-list>
+        </div>
+
+        <div ng-repeat="detail in agendaList" ng-init="outerIndex=$index">
+            <div layout="row">
+                <span class="agendaDetails_green">{{detail.whatDay}}</span>
+                <span class="agendaDetails_gray">{{detail.Date}}</span>
+            </div>
+            <md-list >
+                <md-list-item ng-repeat="x in detail.what track by $index" ng-init="innerIndex=$index">
+                    <div class="agendaDetails_fix">
+                        <md-button class="fa fa-automobile md-fab md-mini md-warn md-raised"></md-button>
+                    </div>
+                    <div flex class="md-padding" layout="row" layout-align="space-around" ng-repeat="y in x.status track by $index" ng-init="lastIndex=$index">
+                        <div layout="column" layout-align="center center">
+                            <span>{{y.startTime}}</span>
+                            <span>{{y.startStation}}</span>
+                        </div>
+                        <md-icon class="fa fa-arrow-right"></md-icon>
+                        <div layout="column" layout-align="center center">
+                            <span>{{y.arriveTime}}</span>
+                            <span>{{y.terminalStation}}</span>
+                        </div>
+                    </div>
+                    <md-divider></md-divider>
+                </md-list-item>
+
+                <!--<md-list-item>-->
+                    <!--<div class="agendaDetails_fix">-->
+                        <!--<md-button class="fa fa-space-shuttle md-fab md-mini md-primary md-raised"></md-button>-->
+                    <!--</div>-->
+                    <!--<div flex class="md-padding" layout="row" layout-align="space-around">-->
+                        <!--<div layout="column" layout-align="center center">-->
+                            <!--<span>14:00</span>-->
+                            <!--<span>厦门(XMN)</span>-->
+                        <!--</div>-->
+                        <!--<md-icon class="fa fa-arrow-right"></md-icon>-->
+                        <!--<div layout="column" layout-align="center center">-->
+                            <!--<span>15:00</span>-->
+                            <!--<span>香港(HKG)</span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<md-divider></md-divider>-->
+                <!--</md-list-item>-->
+                <md-list-item>
+                    <div class="agendaDetails_fix">
+                        <md-button class="fa fa-building md-fab md-mini md-accent md-raised"></md-button>
+                    </div>
+                    <div flex class="md-padding" layout="row" layout-align="space-around">
+                        <div layout="column" layout-align="center center">
+                            <span>16:20</span>
+                            <span>皇家太平洋酒店</span>
+                        </div>
+                        <md-icon ></md-icon>
+                        <div layout="column" layout-align="center center">
+                            <span>入住3天</span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <md-divider></md-divider>
+                </md-list-item>
+            </md-list>
+        </div>
+    </md-content>
+</md-content>
+<div id="bottom" ng-click="showAddAgenda($event)">
+    <span class="fa fa-plus">添加行程计划</span>
+</div>

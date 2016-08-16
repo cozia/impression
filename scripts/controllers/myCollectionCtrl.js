@@ -1,0 +1,31 @@
+/**
+ * Created by HongchunShen on 2016/8/15.
+ */
+angular.module("app").controller("myCollectionCtrl",function($scope){
+   $scope.collections=[
+       {
+           title:"---马尔代夫8日游---",
+           disc:""
+       },
+       {
+           title:"---马尔代夫8日游---",
+           disc:""
+       },
+       {
+           title:"---马尔代夫8日游---",
+           disc:""
+       },
+       {
+           title:"---马尔代夫8日游---",
+           disc:""
+       },
+       {
+           title:"---马尔代夫8日游---",
+           disc:""
+       },
+       {
+           title:"---马尔代夫8日游---",
+           disc:""
+       }
+   ]
+});

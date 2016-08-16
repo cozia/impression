@@ -1,0 +1,28 @@
+.logIcon{
+    width: 100px;
+}
+.telNum{
+    position: relative;
+}
+#verificatalCode{
+    z-index: 999;
+    background: burlywood;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    border: none;
+    height: 44px;
+    border-radius: 5px;
+}
+.ok{
+    color: red;
+}
+#agreeItems{
+    padding-top: 50px;
+}
+#agreeItems>a{
+    text-decoration: none;
+}
+.warning{
+    color: red;
+}

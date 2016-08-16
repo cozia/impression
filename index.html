@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+<link rel="stylesheet" href="styles/font-awesome.min.css">
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+</head>
+<body>
+<div ng-app="app" ng-controller="topCtrl" ng-cloak>
+    <md-sidenav  class="md-sidenav-right md-whiteframe-10dp" md-component-id="Right"  ng-cloak>
+        <div layout="column" layout-align="center center">
+            <img id="userPic" ng-src="{{userPic}}" ng-click="closeNav()" ui-sref="index.login" layout-padding alt="头像"/>                    <!--用户头像-->
+            <p>{{userName}}</p>                                                                                   <!--用户昵称-->
+        </div>
+        <md-divider></md-divider>
+        <md-list ng-repeat="menu in menus" layout="column" layout-align="center center">
+            <md-button class="md-accent md-raised" ng-click="closeNav()" ng-bind="menu.title" ui-sref="{{menu.state}}"></md-button>
+        </md-list>
+        <md-divider></md-divider>
+        <div layout="column">
+            <md-button class="md-warn md-raised">退出</md-button>
+        </div>
+    </md-sidenav>
+    <div id="conX" ui-view=""></div>
+</div>
+</body>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="bower_components/angular-material/angular-material.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
+<script src="bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
+<script src="bower_components/angular-translate/angular-translate.min.js"></script>
+<script src="bower_components/ng-file-upload/ng-file-upload-all.min.js"></script>
+<script src="bower_components/angular-messages/angular-messages.min.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="scripts/App.js"></script>
+<script src="scripts/controllers/topCtrl.js"></script>
+<script>
+    window.onload=function(){
+        var conX=document.getElementById("conX");
+        var clientH=document.documentElement.clientHeight;
+        conX.style.height=clientH+"px";
+    };
+</script>
+</html>

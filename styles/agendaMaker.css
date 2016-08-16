@@ -1,0 +1,12 @@
+#createAgenda{
+    width: 80%;
+    min-height:450px;
+    max-height: 700px;
+    border: 3px dashed grey;
+    border-radius: 10px;
+}
+#add{
+    font-size: 80px;
+    font-weight: bolder;
+
+}

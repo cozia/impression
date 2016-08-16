@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<img src="../img/huanghelou.jpg" lazy_src="../img/impression001" alt=""/>
+<img src="../img/huanghelou.jpg" lazy_src="../img/impression002" alt=""/>
+<img src="../img/huanghelou.jpg" lazy_src="../img/impression003" alt=""/>
+<img src="../img/huanghelou.jpg" lazy_src="../img/impression004" alt=""/>
+<img src="../img/huanghelou.jpg" lazy_src="../img/impression001" alt=""/>
+<img src="../img/huanghelou.jpg" lazy_src="../img/impression002" alt=""/>
+<img src="../img/huanghelou.jpg" lazy_src="../img/impression003" alt=""/>
+<img src="../img/huanghelou.jpg" lazy_src="../img/impression004" alt=""/>
+<img src="../img/huanghelou.jpg" lazy_src="../img/impression001" alt=""/>
+<img src="../img/huanghelou.jpg" lazy_src="../img/impression002" alt=""/>
+<img src="../img/huanghelou.jpg" lazy_src="../img/impression003" alt=""/>
+<img src="../img/huanghelou.jpg" lazy_src="../img/impression004" alt=""/>
+<img src="../img/huanghelou.jpg" lazy_src="../img/impression001" alt=""/>
+<img src="../img/huanghelou.jpg" lazy_src="../img/impression002" alt=""/>
+<img src="../img/huanghelou.jpg" lazy_src="../img/impression003" alt=""/>
+<img src="../img/huanghelou.jpg" lazy_src="../img/impression004" alt=""/>
+<img src="../img/huanghelou.jpg" lazy_src="../img/impression001" alt=""/>
+<img src="../img/huanghelou.jpg" lazy_src="../img/impression002" alt=""/>
+<img src="../img/huanghelou.jpg" lazy_src="../img/impression003" alt=""/>
+<img src="../img/huanghelou.jpg" lazy_src="../img/impression004" alt=""/>
+<img src="../img/huanghelou.jpg" lazy_src="../img/impression001" alt=""/>
+<img src="../img/huanghelou.jpg" lazy_src="../img/impression002" alt=""/>
+<img src="../img/huanghelou.jpg" lazy_src="../img/impression003" alt=""/>
+<img src="../img/huanghelou.jpg" lazy_src="../img/impression004" alt=""/>
+
+
+</body>
+<script>
+    function initElementMap(){
+        var el=document.getElementsByTagName("img");
+        for(var j=0;j<el.length;j++){
+            //判断当前的img是否加载过了，或者有lazy_src标志（未完成）
+            if(typeof(el[j].getAttribute("lazy_src"))){
+                element_obj.push(el[j]);
+                download_count++;
+            }
+        }
+    }
+    function lazy(){
+        if(!download_count){
+            return;
+        }
+        var innerHeight=getViewport();
+        for(var i=0;i<element_obj.length;i++){
+            //得到图片相对于document的距上距离
+            var t_index=getElementViewTop(element_obj[i]);
+            if(t_index-getScrollTop()<innerHeight){
+                element_obj[i].src=element_obj[i].getAttribute("lazy_src");
+                delete element_obj[i];
+                download_count--;
+            }
+        }
+    }
+    var lazyLoad=(function(){
+        function init(){
+            initElementMap();
+            lazy();
+        }
+        return{
+            init:init
+        }
+    })();
+
+
+    var x = new lazyLoad();
+    x.init();
+    //src填写默认图片地址，真实的图片地址填写在img标签的lazy_src属性里。切记需指定宽高。
+    //在外面调用lazyLoad.init();
+</script>
+</html>

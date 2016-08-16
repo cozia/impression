@@ -1,0 +1,54 @@
+<md-dialog>
+    <form>
+        <md-toolbar class="md-accent" layout="row" layout-align="center center">
+            添加行程
+        </md-toolbar>
+        <md-dialog-content style="max-width:800px;max-height:810px;" layout="column" layout-align="space-around">
+            <div layout="row" layout-align="space-around">
+                <md-button aria-label="" class="md-fab  md-mini">
+                    <md-icon class="fa fa-cutlery"></md-icon>
+                    <md-tooltip md-direction="left">
+                        美食
+                    </md-tooltip>
+                </md-button>
+                <md-button aria-label="" class="md-fab  md-mini">
+                    <md-icon class="fa fa-building"></md-icon>
+                    <md-tooltip md-direction="left">
+                        住宿
+                    </md-tooltip>
+                </md-button>
+                <md-button aria-label="" class="md-fab  md-mini" ng-click="pushTriffic()">
+                    <md-icon class="fa fa-cab"></md-icon>
+                    <md-tooltip md-direction="left">
+                        交通
+                    </md-tooltip>
+                </md-button>
+            </div>
+            <div layout="row" layout-align="space-around">
+                <md-button aria-label="" class="md-fab  md-mini">
+                    <md-icon class="fa fa-tachometer"></md-icon>
+                    <md-tooltip md-direction="left">
+                        游玩
+                    </md-tooltip>
+                </md-button>
+                <md-button aria-label="" class="md-fab  md-mini">
+                    <md-icon class="fa fa-shopping-cart"></md-icon>
+                    <md-tooltip md-direction="left">
+                        购物
+                    </md-tooltip>
+                </md-button>
+                <md-button aria-label="" class="md-fab  md-mini">
+                    <md-icon class="fa fa-delicious"></md-icon>
+                    <md-tooltip md-direction="left">
+                        娱乐
+                    </md-tooltip>
+                </md-button>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row" layout-align="space-around">
+            <md-button class="md-primary md-raised" ng-click="answer('提交成功')" >提交</md-button>
+            <md-button class="md-warn md-raised" ng-click="answer('取消成功')" style="margin-right:20px;" >取消</md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>
+

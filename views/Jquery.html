@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<script src="../bower_components/jquery/dist/jquery.min.js"></script>-->
+</head>
+<style>
+    .btn{
+        width: 80px;
+        height: 35px;
+        background: #b2dba1;
+        border-style: none;
+        outline-style: none;
+        box-shadow: 0 0 10px 0px #b2dba1;
+        cursor: pointer;
+    }
+    .active{
+        background: mediumvioletred;
+        width: 80px;
+        height: 35px;
+
+        border-style: none;
+        outline-style: none;
+        box-shadow: 0 0 10px 0px #b2dba1;
+        cursor: pointer;
+    }
+    .tab{
+        width: 400px;
+        height: 400px;
+        border: 1px solid red;
+    }
+</style>
+<body>
+<div id="div1">
+    <button class="active">tab1</button>
+    <button class="btn">tab2</button>
+    <button class="btn">tab3</button>
+    <button class="btn">tab4</button>
+    <div class="tab">我是tab1</div>
+    <div class="tab">我是tab2</div>
+    <div class="tab">我是tab3</div>
+    <div class="tab">我是tab4</div>
+</div>
+</body>
+<script>
+    function Tab(id){
+        that=this;
+        var odiv=document.getElementById(id);
+        this.btns=odiv.getElementsByTagName("button");//将变量变为他的属性，实现封装。
+        this.tabs=odiv.getElementsByTagName("div");
+        for(var i=0;i<this.btns.length;i++){
+            this.btns[i].index=i;
+            this.btns[i].onclick=function(){
+                that.fn(this);    //这里面的this指向的是btn[i],that指向的才是Tab对象。
+            };
+        }
+    }
+    Tab.prototype.fn =function(x){    //在原型上添加函数就是Tab对象的一个方法，这里面的this自然指向Tab这个对象。
+        for(var i=0;i<this.btns.length;i++){
+            this.btns[i].className="btn";
+            this.tabs[i].style.display="none";
+        }
+        x.className="active";
+        this.tabs[x.index].style.display="block"
+    };
+    window.onload=function(){
+        new Tab("div1");   //new操作符在背后帮我们做了两件事，第一：帮我们new了一个空的object对象。第二：帮我们return出来了这个对象。
+    };
+
+
+//-------------------------------上面的是面向对象，下面则是面向过程。-----------------------------------------------------------------
+
+
+//window.onload=function(){
+//    var btns=document.getElementsByTagName("button");
+//    var tabs=document.getElementsByTagName("div");
+//    for(var i=0;i<btns.length;i++){
+//        btns[i].index=i;
+//        btns[i].onclick=function(){
+//            for(var i=0;i<btns.length;i++){
+//                btns[i].className="btn";
+//                tabs[i].style.display="none";
+//            }
+//            this.className="active";
+//            tabs[this.index].style.display="block"
+//        }
+//    }
+//}
+</script>
+</html>

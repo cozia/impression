@@ -1,0 +1,20 @@
+<md-content ng-cloak>
+    <md-toolbar class="md-accent" layout="row" layout-align="center center">
+        <h4>我的收藏</h4>
+    </md-toolbar>
+    <md-content ng-repeat="collection in collections" >
+        <md-card>
+            <div class="myCollection_con">
+                <div class="myCollection_dis">
+                    <h3>{{collection.title}}</h3>
+                </div>
+                <!--<h2 class="myCollection_dis">---马尔代夫8日游---</h2>-->
+                <img class="myCollection_img" src="img/impress001.jpg" alt=""/>
+            </div>
+            <md-actions layout="row" layout-align="space-between">
+                <md-button>添加到我的行程</md-button>
+                <md-button>删除</md-button>
+            </md-actions>
+        </md-card>
+    </md-content>
+</md-content>

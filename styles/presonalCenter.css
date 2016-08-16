@@ -1,0 +1,13 @@
+.presonalCenter_head{
+    width: 100%;
+    height: 200px;
+    background: mediumvioletred;
+}
+#presonalCenter_headPhoto{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+}
+.presonalCenter_return{
+    color: #ffffff;
+}
